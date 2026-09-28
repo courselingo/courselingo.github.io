@@ -26,9 +26,8 @@ copyright: >
 theme:
   name: material
   language: zh
-  # 品牌资源：logo.png 是透明底版本，为浅色背景设计；
-  # 深色主题下由 stylesheets/extra.css 给它垫一张白色小底片（见 docs/brand.md）。
-  logo: assets/logo.png
+  # 左上角保持 Material 默认图标（不设 theme.logo）—— 与 csdiy 及各课程站一致。
+  # 项目身份由右上角仓库链接、页脚 social 与首页 hero 承担。
   favicon: assets/favicon.png
   palette:
     - media: "(prefers-color-scheme: light)"

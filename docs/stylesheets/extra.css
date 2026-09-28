@@ -1,21 +1,11 @@
-/* CourseLingo 组织主页 · 品牌补丁
+/* CourseLingo 组织主页 · 站点补丁
  *
- * 1) Logo 是为「浅色背景」设计的：主蓝 #0040c0 在白底对比度 8.4:1，
- *    在深色底只有 2.2:1（基本看不清，见 docs/brand.md）。
- *    所以页头与抽屉导航里一律把透明 logo 放在一张白色小底片上 —— 明暗主题下都清晰。
- * 2) 页面里少量排版辅助类。
+ * 页头不放 logo（2026-09-28 决定）：左上角用 MkDocs Material 的默认图标，
+ * 与 CS 自学指南（csdiy.wiki）一致；课程归属由右上角的仓库链接承担。
+ * 项目身份改由页脚 social 与首页 hero 承担。详见 docs/brand.md。
  */
 
-/* ------- 1. 白色小底片上的 logo ------- */
-.md-header__button.md-logo img,
-.md-nav__button.md-logo img {
-  background: #ffffff;
-  border-radius: 6px;
-  padding: 3px;
-  box-sizing: content-box;
-}
-
-/* ------- 2. 首页 hero 的按钮组 ------- */
+/* ------- 1. 首页 hero 的按钮组 ------- */
 .cl-actions {
   margin: 1.4rem 0 1.8rem;
 }
@@ -24,7 +14,7 @@
   margin: 0 0.4rem 0.4rem 0;
 }
 
-/* ------- 3. 状态总表：窄屏可横向滚动，不挤成一团 ------- */
+/* ------- 2. 状态总表：窄屏可横向滚动，不挤成一团 ------- */
 .md-typeset table:not([class]) {
   display: table;
   width: 100%;
@@ -41,7 +31,7 @@
   }
 }
 
-/* ------- 4. 中文正文的行高与首行缩进（长文更好读） ------- */
+/* ------- 3. 中文正文的行高（长文更好读） ------- */
 .md-typeset {
   line-height: 1.75;
 }
