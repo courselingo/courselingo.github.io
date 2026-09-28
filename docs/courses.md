@@ -134,7 +134,7 @@
 | 证据（逐字） | `MIT License … The website is adapted from UC Berkeley Data Science 8` |
 | 我们能发布 | ✅ **译文 + 双语原文对照，可商用** |
 | 为什么是备选 | 与 15-442 **同分类**，避免同期双开；**这是排期判断，不是授权判断** —— 一旦 NC 约束影响商业化，立即顶上 |
-| ⚠️ 待核实 | 作业材料是否托管在同一仓库（若在，则随 MIT）；`LICENSE` 中的 "Copyright (c) 2024 DSC 204A" 与 CSE 234 的对应关系 |
+| ✅ 已结案 | `LICENSE` 的权利人写 **`DSC 204A`**、自述「The website is adapted from UC Berkeley Data Science 8.」、授予对象是 **`"the Software"`** ⇒ 那是**网站模板的软件许可**，**不覆盖课程内容**。课程内容 0 声明（GitHub 自身判 `NOASSERTION`）；PA 仓库 LICENSE 是真 404 且明文禁发解答。**结论：B 级，只做原创讲解。** |
 
 ## 已规划 / 仅讲解（B 级）
 
@@ -274,7 +274,7 @@
 | MIT 6.006 | **第一梯队（P0）** | 🟡 CC BY-NC-SA 4.0（课程页 + 讲义页双重） | ✅ 译文 + 对照，须同协议发布 |
 | CMU 15-442 / 15-642 | **第一梯队（P0）** | 🟡 CC BY-NC 4.0，无 SA（仓库根 `LICENSE`） | ✅ 译文 + 对照，不传染；作业待核实 |
 | ETH DDCA → CA | **第一梯队（P0）** | 🟡 CC BY-NC-SA 4.0（wiki 三页一致） | ✅ 译文 + 对照（限 wiki 内容）；⛔ YouTube 不做 |
-| UCSD CSE 234 | **第一梯队 · 备选** | 🟢 **MIT License**（最宽松，可商用） | ✅ 译文 + 对照；作业待核实 |
+| UCSD CSE 234 | **第一梯队 · 备选** | 🔴 **B 级**：LICENSE 对象是 "the Software"（网站模板许可），课程内容 0 声明 | ⛔ 只做原创讲解 |
 | MIT 6.1810 / 6.S081 | **已规划** | ⚠️ 已取证页面为 CC BY 3.0 US；**讲义未单独取证 ⇒ 未确认**；xv6 教材 MIT | ⛔ 未解锁 |
 | MIT OpenCourseWare | **授权范式**（6.006 / 6.046J 的依据） | 🟡 CC BY-NC-SA 4.0（禁商用 + SA 传染） | 🟡 须同协议发布 |
 | CMU 15-445 | **已规划 / 仅讲解** | 🔴 未声明许可 = 保留所有权利 | ⛔ 不可做 |
