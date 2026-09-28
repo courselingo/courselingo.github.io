@@ -1,0 +1,11 @@
+# CourseLingo 组织主页的构建依赖
+#
+#   python -m pip install -r requirements.txt
+#
+# mkdocs-material 提供主题与本地搜索；
+# 版本下限取 9.x（明暗主题切换、search.highlight / search.suggest 特性）。
+mkdocs-material>=9.5,<10
+
+# 可选但**强烈建议**：Material 用 jieba 对中文分词。
+# 未安装也能构建成功，只是站内搜索对中文的命中率会明显下降。
+jieba>=0.42

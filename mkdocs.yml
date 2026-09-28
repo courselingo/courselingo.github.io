@@ -1,0 +1,89 @@
+# CourseLingo 组织主页 · MkDocs Material 配置
+#
+# 构建：
+#   python -m mkdocs build --strict -f org-site/mkdocs.yml
+# 本地预览：
+#   python -m mkdocs serve -f org-site/mkdocs.yml
+#
+# strict: true —— 与 CI 一致：任何 warning 都算失败（本项目要求 0 warning）。
+
+site_name: CourseLingo · 译课 AI
+site_description: >-
+  AI-powered translation & explanation for classic CS courses.
+  让经典 CS 课程，跨语言也能学懂。
+site_url: https://courselingo.github.io/
+site_author: CourseLingo
+
+repo_url: https://github.com/courselingo/courselingo
+repo_name: courselingo/courselingo
+# 本站不在平台仓库里，所以不提供「编辑此页」链接，避免指向错误的位置。
+edit_uri: ""
+
+copyright: >
+  非官方 · 社区项目，与任何院校均无隶属关系。代码 MIT ·
+  我们的原创内容 CC BY 4.0 · 上游课程材料一律不转载，版权归原作者与院校所有。
+
+theme:
+  name: material
+  language: zh
+  # 品牌资源：logo.png 是透明底版本，为浅色背景设计；
+  # 深色主题下由 stylesheets/extra.css 给它垫一张白色小底片（见 docs/brand.md）。
+  logo: assets/logo.png
+  favicon: assets/favicon.png
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: 切换到深色模式
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: blue
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: 切换到浅色模式
+  features:
+    - navigation.top
+    - navigation.footer
+    - search.highlight
+    - search.suggest
+    - toc.follow
+    - content.code.copy
+  icon:
+    repo: fontawesome/brands/github
+
+extra_css:
+  - stylesheets/extra.css
+
+nav:
+  - 首页: index.md
+  - 课程: courses.md
+  - 我们怎么做: how-we-work.md
+  - 授权说明: licensing.md
+
+plugins:
+  - search:
+      # 中文检索建议同时安装 jieba（见 requirements.txt）：
+      # 装了 jieba，Material 会按词切分中文，检索命中率明显更好。
+      # 未安装也不影响构建，只是中文分词退化为整串匹配。
+      separator: '[\s\u200b\u3000\-·、，。：；！？（）《》【】「」]+'
+
+markdown_extensions:
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+      toc_depth: 3
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+
+# 0 warning 是本项目的硬要求。
+strict: true

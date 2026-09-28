@@ -1,0 +1,55 @@
+# 构建并部署 CourseLingo 组织主页到 GitHub Pages
+#
+# 前提：本目录（org-site/）是整个仓库的根 —— 即 GitHub 上的组织仓库，
+# 例如 courselingo/courselingo.github.io。
+#
+# 构建用 --strict：任何 warning 都算失败，与本地验证命令一致。
+
+name: pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: 安装依赖
+        run: pip install -r requirements.txt
+
+      - name: 构建（--strict，0 warning 是硬要求）
+        run: mkdocs build --strict -f mkdocs.yml
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
